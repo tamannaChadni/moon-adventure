@@ -13,14 +13,14 @@ const Proccess = () => {
         </h1>
         <h1 className="text-center mt-2 text-2xl">3 Easy Steps</h1>
       </div>
-      <div className="flex gap-3">
+      <div className="lg:flex lg:gap-3">
         {/* 1st card */}
-        <div className="card w-96 bg-base-100 shadow-xl  ">
-          <div className="card-body ">
+        <div className="card lg:w-96 bg-base-100 shadow-xl  ">
+          <div className="card-body">
             <Tooltip anchorSelect=".my-anchor-element" place="top">
               Moon Adventure
             </Tooltip>
-            <div className=" my-anchor-element content-center text-red-500 ml-28">
+            <div className=" my-anchor-element content-center text-red-500 mx-auto">
               <GrMap />
             </div>
             <h2 className="card-title text-lime-500">Choose A Destination</h2>
@@ -33,12 +33,12 @@ const Proccess = () => {
         </div>
         {/* 1st card */}
         {/* 2nd card */}
-        <div className="card w-96 bg-base-100 shadow-xl">
+        <div className="card lg:w-96 bg-base-100 shadow-xl mt-2">
           <div className="card-body">
           <Tooltip anchorSelect=".my-anchor-element" place="top">
               Moon Adventure
             </Tooltip>
-            <div className="my-anchor-element content-center text-red-500 ml-28">
+            <div className="my-anchor-element content-center text-red-500 mx-auto">
               <CiDollar />
             </div>
             <h2 className="card-title text-lime-500">Pay Online</h2>
@@ -51,12 +51,12 @@ const Proccess = () => {
         </div>
         {/* 2nd card */}
         {/* 3rd card */}
-        <div className="card w-96 bg-base-100 shadow-xl">
+        <div className="card lg:w-96 bg-base-100 shadow-xl mt-2">
           <div className="card-body">
           <Tooltip anchorSelect=".my-anchor-element" place="top">
               Moon Adventure
             </Tooltip>
-            <div className=" my-anchor-element content-center text-red-500 ml-28 ">
+            <div className=" my-anchor-element content-center text-red-500 mx-auto ">
               <CiPlane />
             </div>
             <h2 className="card-title text-lime-500">Fly Today</h2>
