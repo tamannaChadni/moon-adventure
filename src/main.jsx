@@ -6,7 +6,6 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import MainLayout from "./component/Layout/MainLayout";
 import Home from "./Pages/Home";
 import ErrorPage from "./component/ErrorPage/ErrorPage";
-// import PropertyDetails from "./component/PropertyDetails/PropertyDetails";
 import Login from "./Pages/Login/Login";
 import Register from "./Pages/Register/Register";
 import AuthProvider from "./Providers/AuthProvider";
@@ -18,6 +17,8 @@ import AllSpots from "./component/AllSpots/AllSpots";
 import AddSpots from "./component/AddSpots/AddSpots";
 import MyList from "./component/MyList/MyList";
 import UpdateSpot from "./component/UpdateSpot/UpdateSpot";
+import Country from "./component/Country/Country";
+import SpotDetails from "./component/SpotDetails/SpotDetails";
 
 const router = createBrowserRouter([
   {
@@ -31,17 +32,25 @@ const router = createBrowserRouter([
         loader: () =>
           
           fetch(
-            "https://tamannachadni.github.io/properties-json-hosting/properties.json"
+            "http://localhost:5000/spot"
           ),
       },
-      // {
-      //   path: "/property/:id",
-      //   element: <PrivateRoute><PropertyDetails></PropertyDetails></PrivateRoute>,
-      //   loader: () =>
-      //     fetch(
-      //       "https://tamannachadni.github.io/properties-json-hosting/properties.json"
-      //     ),
-      // },
+      {
+        path: "/spot/:id",
+        element: <SpotDetails></SpotDetails>,
+        loader: () =>
+          fetch(
+            "http://localhost:5000/spot"
+          ),
+      },
+      {
+        path:"/",
+        element:<Country></Country>,
+        loader: () =>
+           fetch(
+            "http://localhost:5000/country"
+          ),
+      },
       {
         path:"/all-spots",
         element:<AllSpots></AllSpots>,
@@ -51,8 +60,9 @@ const router = createBrowserRouter([
         element:<AddSpots></AddSpots>,
       },
       {
-        path:"/update-spots",
+        path:"/update-spots//:id",
         element:<UpdateSpot></UpdateSpot>,
+        loader:({params}) => fetch(`http://localhost:5000/spot/${params.id}`)
       },
       {
         path:"/my-list",

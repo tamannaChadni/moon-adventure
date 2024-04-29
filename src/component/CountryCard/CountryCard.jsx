@@ -1,10 +1,11 @@
 import React from 'react';
 
-const CountryCard = () => {
+// eslint-disable-next-line react/prop-types
+const CountryCard = ({country}) => {
 
 
     // eslint-disable-next-line react/prop-types
-  const { _id, name, photo, description } = country;
+  const { name, photo, description } = country;
     return (
 
         

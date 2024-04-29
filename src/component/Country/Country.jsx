@@ -1,6 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
+import { useLoaderData } from 'react-router-dom';
+import CountryCard from "../CountryCard/CountryCard";
 
 const Country = () => {
+  const loadedCountries = useLoaderData();
+  
+  const [countries, setCountries] = useState(loadedCountries);
 
 
   
@@ -22,9 +27,12 @@ const Country = () => {
         {/* 1st card */}
 
         {
-          country.map(c)=>(
-            key={c._id}
-          )
+          countries.map(country => <CountryCard
+            key={country._id}
+            countries={countries}
+            country={country}
+            setCountries={setCountries}
+          ></CountryCard>)
         }
         
         {/* 1st card */}
