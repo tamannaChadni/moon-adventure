@@ -3,14 +3,26 @@ import React from "react";
 const Country = () => {
   return (
     <div className="container mx-auto mt-4">
+
+<div className="space-y-2 text-center">
+            <h2 className="text-3xl font-bold">
+              Tourist Countries In Africa
+            </h2>
+            <p className="font-serif text-xl dark:text-gray-600">
+              We are dedicated to providing world-class service and
+              market-leading expertise to our clients.
+            </p>
+          </div>
+          {/* card */}
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+      
         {/* 1st card */}
         <div className=" bg-base-100 shadow-xl">
-          <figure className="px-10 pt-10">
+          <figure className="px-10 pt-10 ">
             <img
               src="https://i.ibb.co/nm2ZHGb/img2.jpg"
               alt="photo"
-              className="rounded-xl"
+              className="rounded-xl mx-auto"
             />
           </figure>
           <div className="card-body items-center text-center">
@@ -25,7 +37,7 @@ const Country = () => {
             <img
               src="https://i.ibb.co/vx29vDX/img3.jpg"
               alt="photo"
-              className="rounded-xl"
+              className="rounded-xl mx-auto"
             />
           </figure>
           <div className="card-body items-center text-center">
@@ -40,7 +52,7 @@ const Country = () => {
             <img
               src="https://i.ibb.co/WD8QmHF/img1.jpg"
               alt="photo"
-              className="rounded-xl"
+              className="rounded-xl mx-auto"
             />
           </figure>
           <div className="card-body items-center text-center">
