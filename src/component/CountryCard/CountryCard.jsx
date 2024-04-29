@@ -1,9 +1,28 @@
 import React from 'react';
 
 const CountryCard = () => {
+
+
+    // eslint-disable-next-line react/prop-types
+  const { _id, name, photo, description } = country;
     return (
+
+        
         <div>
-            <h4>Country card</h4>
+            <div className=" bg-base-100 shadow-xl">
+          <figure className="px-10 pt-10 ">
+            <img
+              // src="https://i.ibb.co/nm2ZHGb/img2.jpg"
+              src={photo}
+              alt="photo"
+              className="rounded-xl mx-auto"
+            />
+          </figure>
+          <div className="card-body items-center text-center">
+            <h2 className="card-title text-lime-400">{name}</h2>
+            <p>{description}</p>
+          </div>
+        </div>
         </div>
     );
 };

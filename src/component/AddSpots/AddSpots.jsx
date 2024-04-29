@@ -43,7 +43,7 @@ const AddSpots = () => {
                 <span className="label-text">Country Name</span>
               </div>
               <input
-                name="country-name"
+                name="country_name"
                 type="text"
                 placeholder="Country Name"
                 className="input input-bordered w-full"
@@ -79,7 +79,7 @@ const AddSpots = () => {
                 <span className="label-text">Average Cost</span>
               </div>
               <input
-                name="average-cost"
+                name="average_cost"
                 type="text"
                 placeholder="average cost"
                 className="input input-bordered w-full"
@@ -94,7 +94,7 @@ const AddSpots = () => {
                 <span className="label-text">Travel Time</span>
               </div>
               <input
-                name="travel-time"
+                name="travel_time"
                 type="text"
                 placeholder="Travel Time"
                 className="input input-bordered w-full"
@@ -105,7 +105,7 @@ const AddSpots = () => {
                 <span className="label-text">Total Visitors PerYear</span>
               </div>
               <input
-                name="total-visitors-per-year"
+                name="totalVisitorsPerYear"
                 type="text"
                 placeholder="total Visitors PerYear"
                 className="input input-bordered w-full"
@@ -117,7 +117,7 @@ const AddSpots = () => {
               <span className="label-text">Short Description</span>
             </div>
             <input
-              name="short-description"
+              name="short_description"
               type="text"
               placeholder="short description"
               className="input input-bordered w-full"
