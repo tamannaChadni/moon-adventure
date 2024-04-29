@@ -1,9 +1,33 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useLoaderData } from "react-router-dom";
 import SingleProperty from "../SingleProperty/SingleProperty";
+import { AuthContext } from "../../Providers/AuthProvider";
+import './loader.css';
+
+// import { render } from "react-dom";
+// import { Grid } from "react-loader-spinner";
 
 const Properties = () => {
   const properties = useLoaderData();
+  
+
+  const {loading} = useContext(AuthContext)
+
+  if (loading) {
+    // <Grid
+    //   visible={true}
+    //   height="80"
+    //   width="80"
+    //   color="#4fa94d"
+    //   ariaLabel="grid-loading"
+    //   radius="12.5"
+    //   wrapperStyle={{}}
+    //   wrapperClass="grid-wrapper"
+    //   />
+
+    return <span className="loading loading-dots loading-lg search-loader"></span>
+}
+
  
   return (
     <div className="container mx-auto mt-4 ">
@@ -16,6 +40,7 @@ const Properties = () => {
             </p>
           </div>
           <div className="grid grid-cols-1 gap-x-4 gap-y-8 md:grid-cols-2 lg:grid-cols-3">
+            
             {properties.map((property) => (
               <SingleProperty key={property.id} property={property}></SingleProperty>
             ))}

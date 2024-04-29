@@ -13,7 +13,11 @@ import Proccess from "./Proccess/Proccess";
 import Country from "../component/Country/Country";
 AOS.init();
 
+
 const Home = () => {
+
+  
+
   return (
     <div>
       <Helmet>
