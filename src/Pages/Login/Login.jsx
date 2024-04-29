@@ -7,7 +7,7 @@ import { PiGithubLogoDuotone } from "react-icons/pi";
 
 const Login = () => {
 
-  const {signInUser,signInWithGoogle} = useContext(AuthContext);
+  const {signInUser,signInWithGoogle,signInWithGithub} = useContext(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -46,6 +46,15 @@ const Login = () => {
         console.log(error);
       })
     }
+    const handleGithubSignIn = () =>{
+      signInWithGithub()
+      .then(result =>{
+        console.log(result);
+      })
+      .catch(error =>{
+        console.log(error);
+      })
+    }
 
     
 
@@ -74,7 +83,7 @@ const Login = () => {
         </div>
         <div className=' space-x-5'>
             <button onClick={handleGoogleSignIn} className='btn'><FcGoogle />Google Login</button>
-            <button className='btn'><PiGithubLogoDuotone />GitHub Login</button>
+            <button onClick={handleGithubSignIn} className='btn'><PiGithubLogoDuotone />GitHub Login</button>
         </div>
         <div className="form-control mt-6">
           <button className="btn  bg-lime-600 text-white">Login</button>

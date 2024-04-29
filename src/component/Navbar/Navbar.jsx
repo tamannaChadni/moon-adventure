@@ -6,15 +6,15 @@ const Navbar = () => {
 
   const {user,logOut} = useContext(AuthContext);
  
-  const handleLogout = () =>{
-    logOut()
-    .then(result =>{
-      console.log(result);
-    })
-    .catch(error =>{
-      console.log(error);
-    })
-  }
+  // const handleLogout = () =>{
+  //   logOut()
+  //   .then(result =>{
+  //     console.log(result);
+  //   })
+  //   .catch(error =>{
+  //     console.log(error);
+  //   })
+  // }
 
   return (
     <div className="container navbar bg-base-100 mx-auto">
@@ -125,15 +125,40 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="navbar-end gap-2">
-        {
+        {/* {
           user ?<button onClick={handleLogout} className="btn bg-lime-500 text-white hidden lg:block">
           Logout
         </button>:<Link to="/login"><button className="btn bg-lime-500 text-white hidden lg:block">
           Login
         </button></Link>
-        }
+        } */}
+        {
+                        user? <div className="dropdown dropdown-end">
+                            <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                                <div className="w-10 rounded-full">
+                                    <img src={user?.photoURL || "https://i.ibb.co/6y60rJ3/use.jpg" } />
+                                </div>
+                            </label>
+                            <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                                <li>
+                                    <button className="btn btn-sm  btn-ghost">{user?.displayName||'user name not found'}</button>
+
+                                </li>
+                                <li>
+                                    <button
+                                        onClick={logOut}
+                                        className="btn btn-sm bg-green-600 text-white">Logout</button>
+
+                                </li>
+                            </ul>
+                        </div>
+                            :
+                            <Link to='/login'>
+                                <button className="btn btn-sm bg-lime-400 text-white">Login</button>
+                            </Link>
+                    }
         
-        <Link to="/register"><button className="btn bg-yellow-400 text-white">Registration</button></Link>
+        <Link to="/register"><button className="btn btn-sm bg-yellow-400 text-white">Registration</button></Link>
       </div>
     </div>
   );
