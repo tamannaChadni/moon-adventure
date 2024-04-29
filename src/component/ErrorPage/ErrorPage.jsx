@@ -4,7 +4,14 @@ import { useNavigate } from "react-router-dom";
 const ErrorPage = () => {
   const navigate = useNavigate();
   return (
-    <div>
+    <div className='text-center'>
+      <h1 className='text-[400px] font-bold'>
+                404
+            </h1>
+
+            <h2 className='text-5xl font-bold'>
+                NOT FOUND
+            </h2>
       <section className="bg-white ">
         <div className="container flex items-center min-h-screen px-6 py-12 mx-auto">
           <div className="flex flex-col items-center max-w-sm mx-auto text-center">
