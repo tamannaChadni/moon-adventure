@@ -1,5 +1,4 @@
 import React from "react";
-import Properties from "../component/Properties/Properties";
 
 
 
@@ -11,6 +10,7 @@ import Baner from "../component/Banner/Baner";
 import AboutUs from "./AboutUs/AboutUs";
 import Proccess from "./Proccess/Proccess";
 import Country from "../component/Country/Country";
+import Spot from "../component/Spot/Spot";
 AOS.init();
 
 
@@ -24,7 +24,7 @@ const Home = () => {
         <title>Moon Adventure | Home</title>
       </Helmet>
       <Baner></Baner>
-      <Properties></Properties>
+      <Spot></Spot>
       <Country></Country>
       <AboutUs></AboutUs>
       <Proccess></Proccess>
