@@ -1,7 +1,4 @@
 import React from "react";
-
-
-
 import { Helmet } from "react-helmet-async";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -24,8 +21,8 @@ const Home = () => {
         <title>Moon Adventure | Home</title>
       </Helmet>
       <Baner></Baner>
-      <Spot></Spot>
-      <Country></Country>
+      {/* <Spot></Spot> */}
+      {/* <Country></Country> */}
       <AboutUs></AboutUs>
       <Proccess></Proccess>
     </div>

@@ -1,10 +1,15 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
-// import { useLoaderData } from "react-router-dom";
+import SingleSpot from "../SingleSpot/SingleSpot";
+import { useLoaderData } from "react-router-dom";
 // import SingleProperty from "../SingleProperty/SingleProperty";
 
+
+
 const AllSpots = () => {
-    // const properties = useLoaderData();
+    // const spots = useLoaderData();
+
+
   return (
     <div className="container mx-auto">
       <Helmet>
@@ -19,8 +24,8 @@ const AllSpots = () => {
             </p>
           </div>
           <div className="grid grid-cols-1 gap-x-4 gap-y-8 md:grid-cols-2 lg:grid-cols-3">
-            {/* {properties.map((property) => (
-              <SingleProperty key={property.id} property={property}></SingleProperty>
+            {/* {spots.map((spot) => (
+              <SingleSpot key={spot.id} spot={spot}></SingleSpot>
             ))} */}
           </div>
         </div>

@@ -29,31 +29,45 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Home></Home>,
-        loader: () =>
+        // loader: () =>
           
-          fetch(
-            "http://localhost:5000/spot"
+        //   fetch(
+        //     "http://localhost:5000/spot"
+        //   ),
+         loader: () =>
+          
+           fetch(
+            "https://raw.githubusercontent.com/tamannaChadni/touristSpot-json-hosting/main/touristspot.json"
           ),
       },
       {
         path: "/spot/:id",
         element: <SpotDetails></SpotDetails>,
+        // loader: () =>
+        //   fetch(
+        //     "http://localhost:5000/spot"
+        //   ),
         loader: () =>
           fetch(
-            "http://localhost:5000/spot"
+            "https://raw.githubusercontent.com/tamannaChadni/touristSpot-json-hosting/main/touristspot.json"
           ),
       },
       {
-        path:"/",
+        path:"/country",
         element:<Country></Country>,
-        loader: () =>
-           fetch(
-            "http://localhost:5000/country"
-          ),
+        // loader: () =>
+        //    fetch(
+        //     "http://localhost:5000/country"
+        //   ),
+        loader: () => fetch("https://raw.githubusercontent.com/tamannaChadni/countries-json/main/countries.json"),
       },
       {
         path:"/all-spots",
         element:<AllSpots></AllSpots>,
+        // loader: () =>
+        //   fetch(
+        //     "https://raw.githubusercontent.com/tamannaChadni/touristSpot-json-hosting/main/touristspot.json"
+        //   ),
       },
       {
         path:"/add-spots",
