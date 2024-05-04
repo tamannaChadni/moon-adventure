@@ -1,15 +1,14 @@
-import React from "react";
-// import React , { useContext } from "react";
+// import React from "react";
+import React, { useContext } from "react";
 import { Helmet } from "react-helmet-async";
 import Swal from 'sweetalert2'
-// import { AuthContext } from "../../Providers/AuthProvider";
+import { AuthContext } from "../../Providers/AuthProvider";
 
 const AddSpots = () => {
-  // const {user} = useContext(AuthContext);
+  const { user } = useContext(AuthContext);
 
-
-
-  const handleAddSpot = event => {
+  const handleAddSpot = (event) => {
+    // console.log("clicked");
     event.preventDefault();
 
     const form = event.target;
@@ -23,23 +22,36 @@ const AddSpots = () => {
     const travel_time = form.travel_time.value;
     const totalVisitorsPerYear = form.totalVisitorsPerYear.value;
     const short_description = form.short_description.value;
-    // const email = user.email;
+    const email = user.email;
 
-    const newSpot = { image, tourists_spot_name, country_name, location, seasonality, average_cost, travel_time,totalVisitorsPerYear, short_description}
+    const newSpot = {
+      image,
+      tourists_spot_name,
+      country_name,
+      location,
+      seasonality,
+      average_cost,
+      travel_time,
+      totalVisitorsPerYear,
+      short_description,
+      email,
+    };
 
     console.log(newSpot);
 
     // send data to the server
 
-    fetch('http://localhost:5000/spot',{
-        method:'POST',
-        headers: {
-            'content-type':'application/json'
-        },
-        body:JSON.stringify(newSpot)
+    fetch("https://moon-adventure-ltd-server.vercel.app/spots", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(newSpot),
     })
-    .then(res=>res.json())
-    .then(data =>{
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
         console.log(data);
         if (data.insertedId) {
             Swal.fire({
@@ -49,9 +61,8 @@ const AddSpots = () => {
                 confirmButtonText: 'Cool'
               })
         }
-    })
-}
-
+      });
+  };
 
   return (
     <div className="container mx-auto">
@@ -61,7 +72,7 @@ const AddSpots = () => {
       <div className="bg-[#F4F3F0] p-24">
         <h2 className="text-3xl font-bold">Add a new Tourist Spot</h2>
         <form onSubmit={handleAddSpot}>
-        {/* <form> */}
+          {/* <form> */}
           {/* form 1st row */}
           <div className="md:flex gap-3 mb-8">
             <label className="form-control md:w-1/2">
@@ -93,12 +104,22 @@ const AddSpots = () => {
               <div className="label">
                 <span className="label-text">Country Name</span>
               </div>
-              <input
+              <select className="input input-bordered" name="country_name" type="text">
+    <option value="" disabled selected>Country Name</option>
+    <option value="option1">South Africa</option>
+    <option value="option2">Tanzania</option>
+    <option value="option3">Kenya</option>
+    <option value="option3">Morocco</option>
+    <option value="option3">Egypt</option>
+    <option value="option3">Namibia</option>
+  </select>
+              {/* <input
                 name="country_name"
                 type="text"
                 placeholder="Country Name"
                 className="input input-bordered w-full"
-              />
+              /> */}
+              
             </label>
             <label className="form-control md:w-1/2">
               <div className="label">
@@ -137,7 +158,7 @@ const AddSpots = () => {
               />
             </label>
           </div>
-          
+
           {/* form 4rd row */}
           <div className="md:flex gap-3 mb-8">
             <label className="form-control md:w-1/2">

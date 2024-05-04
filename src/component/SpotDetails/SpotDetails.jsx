@@ -6,7 +6,7 @@ import "react-toastify/dist/ReactToastify.css";
 const SpotDetails = () => {
   const spot = useLoaderData();
   const { id } = useParams();
-  const perSpot = spot.find((b) => b.id == id);
+  const perSpot = spot.find((b) => b._id == id);
 
   const {
      image,

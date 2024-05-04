@@ -1,11 +1,23 @@
 import React, { useState } from "react";
 import { useLoaderData } from 'react-router-dom';
 import CountryCard from "../CountryCard/CountryCard";
+import {useEffect} from 'react'
 
-const Country = () => {
+// eslint-disable-next-line react/prop-types
+const Country = ({spot}) => {
+  // console.log(spot);
   const loadedCountries = useLoaderData();
+  // console.log(loadedCountries);
   
   const [countries, setCountries] = useState(loadedCountries);
+
+  useEffect(()=>{
+    fetch('https://moon-adventure-ltd-server.vercel.app/country')
+    .then(res => res.json())
+    .then(data => {
+      setCountries(data);
+    }).catch(e=>console.log(e.message));
+  },[])
 
 
   
@@ -31,41 +43,12 @@ const Country = () => {
             key={country._id}
             countries={countries}
             country={country}
-            setCountries={setCountries}
-          ></CountryCard>)
+            spot={spot}
+            
+          ></CountryCard >)
         }
         
-        {/* 1st card */}
-        {/* 2nd card */}
-        {/* <div className=" bg-base-100 shadow-xl">
-          <figure className="px-10 pt-10">
-            <img
-              src="https://i.ibb.co/vx29vDX/img3.jpg"
-              alt="photo"
-              className="rounded-xl mx-auto"
-            />
-          </figure>
-          <div className="card-body items-center text-center">
-            <h2 className="card-title text-lime-400">Morocco</h2>
-            <p>Morocco, a North African country bordering the Atlantic Ocean and Mediterranean Sea, is distinguished by its Berber, Arabian and European cultural influences. Marrakesh medina, a mazelike medieval quarter, offers entertainment in its Djemaa el-Fna square and souks marketplaces selling ceramics, jewelry and metal lanterns. The capital Rabat Kasbah of the Udayas is a 12th-century royal fort overlooking the water</p>
-          </div>
-        </div> */}
-        {/* 2nd card */}
-        {/* 3rd card */}
-        {/* <div className=" bg-base-100 shadow-xl">
-          <figure className="px-10 pt-10">
-            <img
-              src="https://i.ibb.co/WD8QmHF/img1.jpg"
-              alt="photo"
-              className="rounded-xl mx-auto"
-            />
-          </figure>
-          <div className="card-body items-center text-center">
-            <h2 className="card-title text-lime-400">Egypt</h2>
-            <p>Egypt, a country linking northeast Africa with the Middle East, dates to the time of the pharaohs. Millennia-old monuments sit along the fertile Nile River Valley, including Giza colossal Pyramids and Great Sphinx as well as Luxor hieroglyph-lined Karnak Temple and Valley of the Kings tombs. The capital, Cairo, is home to Ottoman landmarks like Muhammad Ali Mosque</p>
-          </div>
-        </div> */}
-        {/* 3rd card */}
+       
       </div>
     </div>
   );

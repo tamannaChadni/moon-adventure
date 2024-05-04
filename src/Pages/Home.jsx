@@ -8,10 +8,15 @@ import AboutUs from "./AboutUs/AboutUs";
 import Proccess from "./Proccess/Proccess";
 import Country from "../component/Country/Country";
 import Spot from "../component/Spot/Spot";
+import { useLoaderData } from "react-router-dom";
 AOS.init();
 
 
 const Home = () => {
+
+  const spot = useLoaderData();
+  // console.log(spot);
+
 
   
 
@@ -21,8 +26,8 @@ const Home = () => {
         <title>Moon Adventure | Home</title>
       </Helmet>
       <Baner></Baner>
-      {/* <Spot></Spot> */}
-      {/* <Country></Country> */}
+      <Spot spot={spot} ></Spot>
+      <Country ></Country>
       <AboutUs></AboutUs>
       <Proccess></Proccess>
     </div>
