@@ -106,12 +106,12 @@ const AddSpots = () => {
               </div>
               <select className="input input-bordered" name="country_name" type="text">
     <option value="" disabled selected>Country Name</option>
-    <option value="option1">South Africa</option>
-    <option value="option2">Tanzania</option>
-    <option value="option3">Kenya</option>
-    <option value="option3">Morocco</option>
-    <option value="option3">Egypt</option>
-    <option value="option3">Namibia</option>
+    <option value="South Africa">South Africa</option>
+    <option value="Tanzania">Tanzania</option>
+    <option value="Kenya">Kenya</option>
+    <option value="Morocco">Morocco</option>
+    <option value="Egypt">Egypt</option>
+    <option value="Namibia">Namibia</option>
   </select>
               {/* <input
                 name="country_name"

@@ -1,12 +1,12 @@
 import React from "react";
-import { useLoaderData, useParams } from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
 // import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const SpotDetails = () => {
   const spot = useLoaderData();
-  const { id } = useParams();
-  const perSpot = spot.find((b) => b._id == id);
+  // const { _id } = useParams();
+  // const perSpot = spot.find((b) => b._id == _id);
 
   const {
      image,
@@ -17,7 +17,7 @@ const SpotDetails = () => {
      travel_time,
      totalVisitorsPerYear,
      short_description
-  } = perSpot;
+  } = spot;
 
   return (
     <div className="container mx-auto mt-4">

@@ -37,7 +37,7 @@ const SingleSpot = ({ spot }) => {
             </span>
             <span className="font-bold text-yellow-500 text-xl">{travel_time}</span>
           </div>
-          <Link to={`/spot/${_id}`}><button  data-aos="flip-up" className="btn text-white bg-lime-400 ">View Spot</button></Link>
+          <Link to={`/spots/${_id}`}><button  data-aos="flip-up" className="btn text-white bg-lime-400 ">View Spot</button></Link>
         </div>
       </div>
     </article>

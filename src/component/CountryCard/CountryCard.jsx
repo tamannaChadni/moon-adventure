@@ -33,7 +33,7 @@ const CountryCard = ({ country }) => {
       <div className=" bg-base-100 shadow-xl">
         <figure className="px-10 pt-10 ">
           {/* <Link to={`selected-country/${name}`}> */}
-            <img src={photo} alt="photo" className="rounded-xl mx-auto object-fill w-[175px]" />
+            <img src={photo} alt="photo" className="rounded-xl mx-auto object-fill w-[175px] " />
           {/* </Link> */}
         </figure>
         <div className="card-body items-center text-center">

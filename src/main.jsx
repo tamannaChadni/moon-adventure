@@ -18,7 +18,7 @@ import MyList from "./component/MyList/MyList";
 import UpdateSpot from "./component/UpdateSpot/UpdateSpot";
 
 import SpotDetails from "./component/SpotDetails/SpotDetails";
-import SeletedCountry from "./component/SeletedCountry/SeletedCountry";
+// import SeletedCountry from "./component/SeletedCountry/SeletedCountry";
 
 const router = createBrowserRouter([
   {
@@ -32,13 +32,13 @@ const router = createBrowserRouter([
         loader: () => fetch("https://moon-adventure-ltd-server.vercel.app/spots"),
       },
       {
-        path: "/spots/:id",
+        path: "/spots/:_id",
         element: (
           <PrivateRoute>
             <SpotDetails></SpotDetails>
           </PrivateRoute>
         ),
-        loader: () => fetch("https://moon-adventure-ltd-server.vercel.app/spots"),
+        loader: ({ params }) => fetch(`https://moon-adventure-ltd-server.vercel.app/spots/${params._id}`),
       },
 
       {
