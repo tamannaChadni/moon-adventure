@@ -18,7 +18,7 @@ import MyList from "./component/MyList/MyList";
 import UpdateSpot from "./component/UpdateSpot/UpdateSpot";
 
 import SpotDetails from "./component/SpotDetails/SpotDetails";
-// import SeletedCountry from "./component/SeletedCountry/SeletedCountry";
+import SeletedCountry from "./component/SeletedCountry/SeletedCountry";
 
 const router = createBrowserRouter([
   {
@@ -61,16 +61,16 @@ const router = createBrowserRouter([
           fetch(`https://moon-adventure-ltd-server.vercel.app/spots/${params._id}`),
       },
 
-      // {
-      //   path: "/selected-country/:country_name",
-      //   element: (
-      //     <PrivateRoute>
-      //       <SeletedCountry></SeletedCountry>
-      //     </PrivateRoute>
-      //   ),
-      //   loader: ({ params }) =>
-      //     fetch(`https://moon-adventure-ltd-server.vercel.app/spots/${params.country_name}`),
-      // },
+      {
+        path: "/selected-country/:country_name",
+        element: (
+          <PrivateRoute>
+            <SeletedCountry></SeletedCountry>
+          </PrivateRoute>
+        ),
+        // loader: ({ params }) =>
+        //   fetch(`https://moon-adventure-ltd-server.vercel.app/spots/${params.country_name}`),
+      },
       // {
       //   path: "/selected-country/",
       //   element: (

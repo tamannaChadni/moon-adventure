@@ -93,7 +93,7 @@ const MyList = () => {
                 </tr>
               </thead>
               <tbody>
-                {spot?.map((spot) => (
+                {spot?.map((spot) => (  
                   <tr key={spot._id}>
                     <th>{incrementCount}</th>
                     <td>{spot.image}</td>
