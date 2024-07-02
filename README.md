@@ -9,3 +9,6 @@ Live site:
 - login,registration feature implement
 - use mongobd for data
 - create a server site 
+
+
+if anyone run in localsite then install npm package
